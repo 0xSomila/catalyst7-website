@@ -1,69 +1,203 @@
-import Image from "next/image";
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero */}
+      <section className="min-h-screen flex items-center justify-center bg-[#0A0A0A] px-6 text-center">
+        <div>
+          <p className="uppercase tracking-widest text-[#999999] text-xs mb-6 font-[family-name:var(--font-inter)]">
+            Catalyst 7 — Pretoria
           </p>
+          <h1 className="font-bold text-5xl md:text-7xl text-[#EDE5D0] leading-tight mb-8 font-[family-name:var(--font-space-grotesk)]">
+            We build the systems<br />
+            that move <span className="text-[#CC1414]">business</span>.
+          </h1>
+          <p className="text-[#999999] text-lg md:text-xl max-w-xl mx-auto mb-10">
+            Technology. Production. Consultancy. One studio, three verticals.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/work"
+              className="bg-[#CC1414] text-white px-8 py-3 font-medium hover:bg-red-700 transition-colors"
+            >
+              See Our Work
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-[#333333] text-[#EDE5D0] px-8 py-3 hover:border-[#EDE5D0] transition-colors"
+            >
+              Get In Touch
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Three Verticals */}
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <p className="uppercase tracking-widest text-[#999999] text-xs mb-12">
+          What We Do
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#CC1414]">
+            <p className="text-[#CC1414] text-sm font-medium mb-4">01</p>
+            <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 font-[family-name:var(--font-space-grotesk)]">
+              Technology &amp; Automation
+            </h3>
+            <p className="text-[#999999] text-sm leading-relaxed">
+              Custom automation, AI assistants, web platforms and data systems.
+              Built to reduce friction and scale operations.
+            </p>
+            <Link
+              href="/technology"
+              className="text-[#CC1414] text-sm mt-6 block hover:underline"
+            >
+              Explore Technology &rarr;
+            </Link>
+          </div>
+
+          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#333333]">
+            <p className="text-[#999999] text-sm font-medium mb-4">02</p>
+            <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 font-[family-name:var(--font-space-grotesk)]">
+              Production &amp; Media
+            </h3>
+            <p className="text-[#999999] text-sm leading-relaxed">
+              Commercial film, social content, podcast production and creative
+              direction. From brief to final cut.
+            </p>
+            <Link
+              href="/production"
+              className="text-[#EDE5D0] text-sm mt-6 block hover:text-[#CC1414] transition-colors"
+            >
+              Explore Production &rarr;
+            </Link>
+          </div>
+
+          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#333333]">
+            <p className="text-[#999999] text-sm font-medium mb-4">03</p>
+            <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 font-[family-name:var(--font-space-grotesk)]">
+              Business Consultancy
+            </h3>
+            <p className="text-[#999999] text-sm leading-relaxed">
+              Strategy, systems design and market entry. We configure the
+              structure behind your growth.
+            </p>
+            <Link
+              href="/consulting"
+              className="text-[#EDE5D0] text-sm mt-6 block hover:text-[#CC1414] transition-colors"
+            >
+              Explore Consulting &rarr;
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* Credibility Strip */}
+      <section className="bg-[#1A1A1A] py-12 px-6 border-y border-[#333333]">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-12 text-center">
+          <div>
+            <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)]">
+              3+
+            </p>
+            <p className="text-[#999999] text-xs uppercase tracking-widest mt-1">
+              Verticals
+            </p>
+          </div>
+          <div>
+            <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)]">
+              R500K+
+            </p>
+            <p className="text-[#999999] text-xs uppercase tracking-widest mt-1">
+              In Work Delivered
+            </p>
+          </div>
+          <div>
+            <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)]">
+              20+
+            </p>
+            <p className="text-[#999999] text-xs uppercase tracking-widest mt-1">
+              Projects Completed
+            </p>
+          </div>
+          <div>
+            <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)]">
+              AWS
+            </p>
+            <p className="text-[#999999] text-xs uppercase tracking-widest mt-1">
+              Solutions Partner
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Strip */}
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <p className="uppercase tracking-widest text-[#999999] text-xs mb-12">
+          How We Work
+        </p>
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
+              01
+            </p>
+            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
+              Understand
+            </h3>
+            <p className="text-[#999999] text-sm mt-2">
+              We audit your operation, map the gaps and define the outcome.
+            </p>
+          </div>
+          <div className="flex-1">
+            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
+              02
+            </p>
+            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
+              Configure
+            </h3>
+            <p className="text-[#999999] text-sm mt-2">
+              We design the system: people, tools, and process in sequence.
+            </p>
+          </div>
+          <div className="flex-1">
+            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
+              03
+            </p>
+            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
+              Build
+            </h3>
+            <p className="text-[#999999] text-sm mt-2">
+              We execute. Code shipped, content produced, strategy deployed.
+            </p>
+          </div>
+          <div className="flex-1">
+            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
+              04
+            </p>
+            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
+              Run
+            </h3>
+            <p className="text-[#999999] text-sm mt-2">
+              We monitor, iterate and keep the system performing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="bg-[#CC1414] py-20 px-6 text-center">
+        <h2 className="text-white text-3xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
+          Ready to build something that works?
+        </h2>
+        <p className="text-white/80 text-lg mb-10">
+          Tell us what you need. We&apos;ll configure the rest.
+        </p>
+        <Link
+          href="/contact"
+          className="bg-white text-[#CC1414] font-semibold px-10 py-4 hover:bg-[#EDE5D0] transition-colors inline-block"
+        >
+          Start a Project
+        </Link>
+      </section>
+    </>
+  )
 }
