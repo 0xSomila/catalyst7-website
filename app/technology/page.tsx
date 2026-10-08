@@ -121,28 +121,24 @@ export default function Technology() {
 
       {/* AWS Partner Strip */}
       <section className="bg-[#1A1A1A] py-16 px-6 border-y border-[#333333]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1">
-            <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-4">
-              Built with AWS
-            </p>
-            <h2 className="text-[#EDE5D0] text-2xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
-              AWS Solutions Partner
-            </h2>
-            <p className="text-[#999999] text-base leading-relaxed mb-6">
-              As an AWS Solutions Partner, C7 builds and deploys technology solutions on AWS infrastructure,
-              giving clients enterprise-grade reliability and access to AWS funding opportunities.
-            </p>
-            <Link
-              href="/technology/aws"
-              className="text-[#EDE5D0] font-medium hover:text-[#CC1414] transition-colors"
-            >
-              Explore AWS Work &rarr;
-            </Link>
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/aws-partner-badge.svg" alt="AWS Solutions Partner" className="w-48 h-auto" />
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-4">
+            Built with AWS
+          </p>
+          <h2 className="text-[#EDE5D0] text-2xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
+            AWS Solutions Partner
+          </h2>
+          <p className="text-[#999999] text-base leading-relaxed mb-6">
+            As an AWS Solutions Partner, C7 builds and deploys technology solutions on AWS infrastructure,
+            giving clients enterprise-grade reliability and access to AWS funding opportunities.
+          </p>
+          <img src="/aws-partner-badge.svg" alt="AWS Solutions Partner" className="w-40 h-auto mb-6" />
+          <Link
+            href="/technology/aws"
+            className="text-[#EDE5D0] font-medium hover:text-[#CC1414] transition-colors"
+          >
+            Explore AWS Work &rarr;
+          </Link>
         </div>
       </section>
 
