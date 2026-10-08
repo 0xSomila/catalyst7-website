@@ -141,13 +141,7 @@ export default function Technology() {
             </Link>
           </div>
           <div className="flex-shrink-0">
-            <div className="bg-white p-6 flex flex-col items-center justify-center w-48 h-32">
-              <svg viewBox="0 0 160 60" className="w-32 mb-1" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="36" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="36" fill="#FF9900">aws</text>
-                <path d="M114 8 L124 28 L134 8 Z" fill="#FF9900"/>
-              </svg>
-              <p className="text-black text-xs font-semibold tracking-widest uppercase">PARTNER</p>
-            </div>
+            <img src="/aws-partner-badge.svg" alt="AWS Solutions Partner" className="w-48 h-auto" />
           </div>
         </div>
       </section>
