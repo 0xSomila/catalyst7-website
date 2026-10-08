@@ -119,10 +119,10 @@ export default function Contact() {
               Email
             </p>
             <a
-              href="mailto:hello@catalyst7.co.za"
+              href="mailto:catalyst7@catalyst7.co.za"
               className="text-[#EDE5D0] text-lg hover:text-[#CC1414] transition-colors"
             >
-              hello@catalyst7.co.za
+              catalyst7@catalyst7.co.za
             </a>
           </div>
 
@@ -172,7 +172,7 @@ export default function Contact() {
             together.
           </p>
           <a
-            href="mailto:hello@catalyst7.co.za"
+            href="mailto:catalyst7@catalyst7.co.za"
             className="text-[#CC1414] text-sm font-medium hover:underline"
           >
             Book a Call

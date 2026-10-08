@@ -19,10 +19,8 @@ export default function Nav() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#333333]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <span className="font-bold text-[#EDE5D0] text-lg tracking-tight font-[family-name:var(--font-space-grotesk)]">
-              C7
-            </span>
+          <Link href="/" className="flex items-center">
+            <img src="/logo.svg" alt="Catalyst 7" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Links */}
