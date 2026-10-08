@@ -50,7 +50,7 @@ export default function Studio() {
           </div>
           <div>
             <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)] mb-1">
-              2023
+              2025
             </p>
             <p className="text-[#999999] text-xs uppercase tracking-widest">
               Founded

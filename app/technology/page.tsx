@@ -121,22 +121,34 @@ export default function Technology() {
 
       {/* AWS Partner Strip */}
       <section className="bg-[#1A1A1A] py-16 px-6 border-y border-[#333333]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-2">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1">
+            <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-4">
+              Built with AWS
+            </p>
+            <h2 className="text-[#EDE5D0] text-2xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
               AWS Solutions Partner
+            </h2>
+            <p className="text-[#999999] text-base leading-relaxed mb-6">
+              As an AWS Solutions Partner, C7 builds and deploys technology solutions on AWS infrastructure,
+              giving clients enterprise-grade reliability and access to AWS funding opportunities.
             </p>
-            <p className="text-[#EDE5D0] text-lg max-w-xl">
-              C7 is an AWS Solutions Partner. Our cloud builds meet AWS
-              architecture standards and draw on the full suite of AWS services.
-            </p>
+            <Link
+              href="/technology/aws"
+              className="text-[#EDE5D0] font-medium hover:text-[#CC1414] transition-colors"
+            >
+              Explore AWS Work &rarr;
+            </Link>
           </div>
-          <Link
-            href="/technology/aws"
-            className="text-[#EDE5D0] font-medium hover:text-[#CC1414] transition-colors whitespace-nowrap"
-          >
-            Explore AWS Work &rarr;
-          </Link>
+          <div className="flex-shrink-0">
+            <div className="bg-white p-6 flex flex-col items-center justify-center w-48 h-32">
+              <svg viewBox="0 0 160 60" className="w-32 mb-1" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="36" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="36" fill="#FF9900">aws</text>
+                <path d="M114 8 L124 28 L134 8 Z" fill="#FF9900"/>
+              </svg>
+              <p className="text-black text-xs font-semibold tracking-widest uppercase">PARTNER</p>
+            </div>
+          </div>
         </div>
       </section>
 
