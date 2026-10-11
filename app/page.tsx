@@ -14,6 +14,36 @@ export const metadata: Metadata = {
   },
 }
 
+const featuredWork = [
+  {
+    slug: "circuits-of-culture",
+    category: "PRODUCTION",
+    year: "2025–2026",
+    title: "Circuits of Culture",
+    description:
+      "A long-form culture podcast built and produced by C7, covering the conversations South African youth are actually having. 162 peak views, 33 subscribers.",
+    tag: "Podcast · Media",
+  },
+  {
+    slug: "phoenix-jewellers-maker-series",
+    category: "PRODUCTION",
+    year: "2026",
+    title: "Phoenix Jewellers — The Maker Series",
+    description:
+      "A cinematic craft photography series that told the story the jewellery was only hinting at. 73 likes on launch, still converting seven months on.",
+    tag: "Photography · Editorial",
+  },
+  {
+    slug: "bolo-league-visual-identity",
+    category: "PRODUCTION",
+    year: "2026",
+    title: "BOLO League — Visual Identity",
+    description:
+      "A complete visual identity built for a football brand that needed to feel like a cultural institution, not a Sunday league.",
+    tag: "Brand · Identity",
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -27,7 +57,7 @@ export default function Home() {
           className="object-cover object-center"
           priority
         />
-        {/* Dark overlay — keeps text legible while letting the red columns breathe */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-[#0A0A0A]/70" />
         <div className="relative z-10">
           <p className="uppercase tracking-widest text-[#999999] text-xs mb-6 font-[family-name:var(--font-inter)]">
@@ -81,8 +111,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#333333]">
-            <p className="text-[#999999] text-sm font-medium mb-4">02</p>
+          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#CC1414]">
+            <p className="text-[#CC1414] text-sm font-medium mb-4">02</p>
             <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 font-[family-name:var(--font-space-grotesk)]">
               Production &amp; Media
             </h3>
@@ -92,14 +122,14 @@ export default function Home() {
             </p>
             <Link
               href="/production"
-              className="text-[#EDE5D0] text-sm mt-6 block hover:text-[#CC1414] transition-colors"
+              className="text-[#CC1414] text-sm mt-6 block hover:underline"
             >
               Explore Production &rarr;
             </Link>
           </div>
 
-          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#333333]">
-            <p className="text-[#999999] text-sm font-medium mb-4">03</p>
+          <div className="bg-[#1A1A1A] p-8 border-t-2 border-[#CC1414]">
+            <p className="text-[#CC1414] text-sm font-medium mb-4">03</p>
             <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 font-[family-name:var(--font-space-grotesk)]">
               Business Consultancy
             </h3>
@@ -109,7 +139,7 @@ export default function Home() {
             </p>
             <Link
               href="/consulting"
-              className="text-[#EDE5D0] text-sm mt-6 block hover:text-[#CC1414] transition-colors"
+              className="text-[#CC1414] text-sm mt-6 block hover:underline"
             >
               Explore Consulting &rarr;
             </Link>
@@ -122,7 +152,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-12 text-center">
           <div>
             <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)]">
-              3+
+              3
             </p>
             <p className="text-[#999999] text-xs uppercase tracking-widest mt-1">
               Verticals
@@ -138,10 +168,10 @@ export default function Home() {
           </div>
           <div>
             <p className="text-[#EDE5D0] text-3xl font-bold font-[family-name:var(--font-space-grotesk)]">
-              20+
+              11
             </p>
             <p className="text-[#999999] text-xs uppercase tracking-widest mt-1">
-              Projects Completed
+              Portfolio Projects
             </p>
           </div>
           <div>
@@ -155,66 +185,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Strip */}
+      {/* Selected Work */}
       <section className="py-24 px-6 max-w-6xl mx-auto">
-        <p className="uppercase tracking-widest text-[#999999] text-xs mb-12">
-          How We Work
-        </p>
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="flex-1">
-            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
-              01
-            </p>
-            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
-              Understand
-            </h3>
-            <p className="text-[#999999] text-sm mt-2">
-              We audit your operation, map the gaps and define the outcome.
-            </p>
-          </div>
-          <div className="flex-1">
-            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
-              02
-            </p>
-            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
-              Configure
-            </h3>
-            <p className="text-[#999999] text-sm mt-2">
-              We design the system: people, tools, and process in sequence.
-            </p>
-          </div>
-          <div className="flex-1">
-            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
-              03
-            </p>
-            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
-              Build
-            </h3>
-            <p className="text-[#999999] text-sm mt-2">
-              We execute. Code shipped, content produced, strategy deployed.
-            </p>
-          </div>
-          <div className="flex-1">
-            <p className="text-[#CC1414] text-4xl font-bold font-[family-name:var(--font-space-grotesk)] mb-3">
-              04
-            </p>
-            <h3 className="text-[#EDE5D0] text-lg font-semibold font-[family-name:var(--font-space-grotesk)]">
-              Run
-            </h3>
-            <p className="text-[#999999] text-sm mt-2">
-              We monitor, iterate and keep the system performing.
-            </p>
-          </div>
+        <div className="flex justify-between items-end mb-12">
+          <p className="uppercase tracking-widest text-[#999999] text-xs">
+            Selected Work
+          </p>
+          <Link
+            href="/work"
+            className="text-[#999999] text-xs hover:text-[#EDE5D0] transition-colors"
+          >
+            View All &rarr;
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featuredWork.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/work/${project.slug}`}
+              className="bg-[#1A1A1A] p-8 block border border-transparent hover:border-[#CC1414] transition-colors group"
+            >
+              <div className="flex justify-between mb-6">
+                <span className="text-[#999999] text-xs uppercase tracking-widest">
+                  {project.category}
+                </span>
+                <span className="text-[#999999] text-xs">{project.year}</span>
+              </div>
+              <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 group-hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)]">
+                {project.title}
+              </h3>
+              <p className="text-[#999999] text-sm leading-relaxed mb-6">
+                {project.description}
+              </p>
+              <span className="inline-block border border-[#333333] text-[#999999] text-xs px-3 py-1">
+                {project.tag}
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* CTA Banner */}
       <section className="bg-[#CC1414] py-20 px-6 text-center">
         <h2 className="text-white text-3xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
-          Ready to build something that works?
+          Tell us what you need.<br />We&apos;ll configure the rest.
         </h2>
         <p className="text-white/80 text-lg mb-10">
-          Tell us what you need. We&apos;ll configure the rest.
+          Discovery call booked within 24 hours. Proposal in 48.
         </p>
         <Link
           href="/contact"

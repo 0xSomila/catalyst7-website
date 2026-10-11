@@ -29,8 +29,7 @@ export async function sendContactForm(
 
   try {
     await resend.emails.send({
-      // Swap to a catalyst7.co.za address once the domain is verified in Resend
-      from: "Catalyst 7 Website <onboarding@resend.dev>",
+      from: "Catalyst 7 Website <catalyst7@catalyst7.co.za>",
       to: "catalyst7@catalyst7.co.za",
       replyTo: email,
       subject: `New enquiry: ${type} — ${name}`,
