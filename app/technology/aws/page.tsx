@@ -29,11 +29,14 @@ export default function AWSPage() {
             design, migrate and optimise cloud infrastructure on Amazon Web
             Services, with the technical depth and local context to get it right.
           </p>
-          <div className="inline-flex items-center gap-3 border border-[#333333] px-5 py-3 bg-[#1A1A1A]">
+          <div className="inline-flex items-center gap-3 border border-[#333333] px-5 py-3 bg-[#1A1A1A] mb-10">
             <div className="w-2 h-2 rounded-full bg-[#CC1414]" />
             <span className="text-sm text-[#EDE5D0] font-medium">
               AWS Solutions Partner
             </span>
+          </div>
+          <div>
+            <img src="/aws-partner-badge.svg" alt="AWS Solutions Partner" className="w-36 h-auto" />
           </div>
         </div>
       </section>
