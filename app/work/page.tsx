@@ -77,11 +77,11 @@ export default function Work() {
     {
       slug: "circuits-of-culture",
       category: "PRODUCTION",
-      year: "2025",
+      year: "2025-2026",
       title: "Circuits of Culture",
       description:
-        "A cinematic music video that gave an emerging artist's concept the visual weight it deserved. C7 co-produced and credited.",
-      tag: "Music Video · Film",
+        "A long-form culture podcast built and produced by C7, covering the conversations South African youth are actually having.",
+      tag: "Podcast · Media",
     },
     {
       slug: "nuru-house-next5",

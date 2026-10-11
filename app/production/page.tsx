@@ -141,25 +141,25 @@ export default function Production() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-8 border-l-2 border-[#CC1414]">
             <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-3">
-              Commercial Film · 2025
+              Brand Film · 2025
             </p>
             <h3 className="text-[#EDE5D0] text-lg font-semibold mb-2 font-[family-name:var(--font-space-grotesk)]">
-              Lethiwe Dlamini — Brand Film
+              KrownBarber x Lefa — The Krown
             </h3>
             <p className="text-[#999999] text-sm">
-              Brand identity film for a personal brand launch.
+              A brand film positioning KrownBarber as a cultural practitioner, not just a service provider.
             </p>
           </div>
 
           <div className="bg-[#1A1A1A] p-8 border-l-2 border-[#333333]">
             <p className="text-[#999999] text-xs uppercase tracking-widest mb-3">
-              Production &amp; Media · 2025
+              Podcast · Media · 2025–2026
             </p>
             <h3 className="text-[#EDE5D0] text-lg font-semibold mb-2 font-[family-name:var(--font-space-grotesk)]">
-              Circuits of Culture — Podcast Trailer
+              Circuits of Culture
             </h3>
             <p className="text-[#999999] text-sm">
-              Trailer production for a culture and conversation podcast.
+              A long-form culture podcast built and produced by C7. 2 episodes, 162 peak views, 33 subscribers.
             </p>
           </div>
         </div>
