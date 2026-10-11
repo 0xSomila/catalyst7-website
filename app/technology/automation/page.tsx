@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata = {
-  title: "Automation | Catalyst 7",
+export const metadata: Metadata = {
+  title: "Automation",
   description:
-    "Workflow automation and system integration built for South African businesses. C7 maps your processes and builds the infrastructure to run them without manual effort.",
+    "Workflow automation, CRM integrations and process elimination for South African businesses. Catalyst 7 removes the repetitive so your team can focus on the complex.",
+  openGraph: {
+    title: "Automation | Catalyst 7",
+    description:
+      "Workflow automation, CRM integrations and process elimination for South African businesses. Catalyst 7 removes the repetitive so your team can focus on the complex.",
+    url: "https://catalyst7.co.za/technology/automation",
+  },
 }
 
 export default function AutomationPage() {

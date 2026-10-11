@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata = {
-  title: "Web and Digital | Catalyst 7",
+export const metadata: Metadata = {
+  title: "Web & Digital",
   description:
-    "Web platforms, client portals and digital products built for South African businesses. C7 designs and develops the digital infrastructure your operation needs to grow.",
+    "Marketing sites, web applications and digital platforms designed for performance and built for scale. Catalyst 7 ships web products that grow with your business.",
+  openGraph: {
+    title: "Web & Digital | Catalyst 7",
+    description:
+      "Marketing sites, web applications and digital platforms designed for performance and built for scale. Catalyst 7 ships web products that grow with your business.",
+    url: "https://catalyst7.co.za/technology/web-digital",
+  },
 }
 
 export default function WebDigitalPage() {

@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Work",
+  description:
+    "Selected projects across technology, production and consulting. 11 engagements — each one producing a measurable outcome for clients in Pretoria and beyond.",
+  openGraph: {
+    title: "Work | Catalyst 7",
+    description:
+      "Selected projects across technology, production and consulting. 11 engagements — each one producing a measurable outcome for clients in Pretoria and beyond.",
+    url: "https://catalyst7.co.za/work",
+  },
+}
 
 export default function Work() {
   const projects = [

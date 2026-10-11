@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Production",
+  description:
+    "Commercial film, social content, podcast production and creative direction. Catalyst 7 produces media with intent — from brief to final cut, every frame has a job to do.",
+  openGraph: {
+    title: "Production | Catalyst 7",
+    description:
+      "Commercial film, social content, podcast production and creative direction. Catalyst 7 produces media with intent — from brief to final cut, every frame has a job to do.",
+    url: "https://catalyst7.co.za/production",
+  },
+}
 
 export default function Production() {
   return (

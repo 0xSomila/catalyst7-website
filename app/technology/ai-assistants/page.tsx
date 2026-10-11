@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata = {
-  title: "AI Assistants | Catalyst 7",
+export const metadata: Metadata = {
+  title: "AI Assistants",
   description:
-    "Custom AI assistants built for South African businesses. C7 designs, trains and deploys AI tools that handle real operational tasks inside your existing workflows.",
+    "Custom AI tools built on your business context — from WhatsApp receptionists to internal knowledge bases. Catalyst 7 builds AI that works for how your business actually operates.",
+  openGraph: {
+    title: "AI Assistants | Catalyst 7",
+    description:
+      "Custom AI tools built on your business context — from WhatsApp receptionists to internal knowledge bases. Catalyst 7 builds AI that works for how your business actually operates.",
+    url: "https://catalyst7.co.za/technology/ai-assistants",
+  },
 }
 
 export default function AIAssistantsPage() {

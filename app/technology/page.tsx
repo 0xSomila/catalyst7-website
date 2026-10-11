@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Technology",
+  description:
+    "Custom automation, AI assistants, data dashboards, web platforms and AWS cloud infrastructure. Catalyst 7 builds the technology layer that reduces friction and scales your operations.",
+  openGraph: {
+    title: "Technology | Catalyst 7",
+    description:
+      "Custom automation, AI assistants, data dashboards, web platforms and AWS cloud infrastructure. Catalyst 7 builds the technology layer that reduces friction and scales your operations.",
+    url: "https://catalyst7.co.za/technology",
+  },
+}
 
 export default function Technology() {
   return (

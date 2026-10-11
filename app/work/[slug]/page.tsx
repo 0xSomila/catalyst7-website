@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -268,6 +269,25 @@ const projects: Project[] = [
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+  if (!project) return {}
+  return {
+    title: project.title,
+    description: project.brief.slice(0, 160),
+    openGraph: {
+      title: `${project.title} | Catalyst 7`,
+      description: project.brief.slice(0, 160),
+      url: `https://catalyst7.co.za/work/${project.slug}`,
+    },
+  }
 }
 
 export default async function WorkSlugPage({

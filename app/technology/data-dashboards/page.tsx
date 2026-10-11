@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata = {
-  title: "Data Dashboards | Catalyst 7",
+export const metadata: Metadata = {
+  title: "Data Dashboards",
   description:
-    "Custom data dashboards and reporting infrastructure for South African businesses. C7 connects your data sources and builds the visibility layer your team needs to make faster decisions.",
+    "Live business intelligence dashboards — revenue, operations, marketing and client performance in one view. Catalyst 7 turns your data into decisions.",
+  openGraph: {
+    title: "Data Dashboards | Catalyst 7",
+    description:
+      "Live business intelligence dashboards — revenue, operations, marketing and client performance in one view. Catalyst 7 turns your data into decisions.",
+    url: "https://catalyst7.co.za/technology/data-dashboards",
+  },
 }
 
 export default function DataDashboardsPage() {

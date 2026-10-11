@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata = {
-  title: "AWS Solutions Partner | Catalyst 7",
+export const metadata: Metadata = {
+  title: "AWS Infrastructure",
   description:
-    "C7 is an AWS Solutions Partner. We help South African businesses design, migrate and optimise cloud infrastructure on Amazon Web Services.",
+    "Catalyst 7 is an AWS Solutions Partner. We design, build and deploy cloud infrastructure on AWS — giving clients enterprise-grade reliability and access to AWS funding opportunities.",
+  openGraph: {
+    title: "AWS Infrastructure | Catalyst 7",
+    description:
+      "Catalyst 7 is an AWS Solutions Partner. We design, build and deploy cloud infrastructure on AWS — giving clients enterprise-grade reliability and access to AWS funding opportunities.",
+    url: "https://catalyst7.co.za/technology/aws",
+  },
 }
 
 export default function AWSPage() {

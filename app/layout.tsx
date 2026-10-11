@@ -15,9 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Catalyst 7",
+  title: {
+    default: "Catalyst 7",
+    template: "%s | Catalyst 7",
+  },
   description:
-    "Technology. Production. Consultancy. One studio, three verticals.",
+    "Catalyst 7 is a Pretoria-based creative-technology studio. Technology, production and consulting — one studio, three verticals.",
+  metadataBase: new URL("https://catalyst7.co.za"),
+  openGraph: {
+    siteName: "Catalyst 7",
+    locale: "en_ZA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

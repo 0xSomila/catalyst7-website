@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Process",
+  description:
+    "Every Catalyst 7 engagement follows four steps: Understand, Configure, Build, Run. No black-box delivery, no wasted briefs — scope before speed, outcomes over outputs.",
+  openGraph: {
+    title: "Process | Catalyst 7",
+    description:
+      "Every Catalyst 7 engagement follows four steps: Understand, Configure, Build, Run. No black-box delivery, no wasted briefs — scope before speed, outcomes over outputs.",
+    url: "https://catalyst7.co.za/process",
+  },
+}
 
 export default function Process() {
   return (

@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Catalyst 7 — Technology. Production. Consulting.",
+  description:
+    "Catalyst 7 is a Pretoria-based creative-technology studio. We build automation systems, produce commercial media, and configure business strategy for founders and growing SMEs.",
+  openGraph: {
+    title: "Catalyst 7 — Technology. Production. Consulting.",
+    description:
+      "Catalyst 7 is a Pretoria-based creative-technology studio. We build automation systems, produce commercial media, and configure business strategy for founders and growing SMEs.",
+    url: "https://catalyst7.co.za",
+  },
+}
 
 export default function Home() {
   return (

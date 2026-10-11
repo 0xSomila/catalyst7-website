@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Studio",
+  description:
+    "Catalyst 7 is a Pretoria-based creative-technology studio founded in 2025. Three co-founders, three verticals — technology, production and consulting — built to move businesses from idea to outcome.",
+  openGraph: {
+    title: "Studio | Catalyst 7",
+    description:
+      "Catalyst 7 is a Pretoria-based creative-technology studio founded in 2025. Three co-founders, three verticals — technology, production and consulting — built to move businesses from idea to outcome.",
+    url: "https://catalyst7.co.za/studio",
+  },
+}
 
 export default function Studio() {
   return (

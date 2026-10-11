@@ -1,4 +1,17 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Consulting",
+  description:
+    "Business strategy, systems design, market entry and operational audits for founders, SMEs and creative businesses. Catalyst 7 configures the structure behind your growth.",
+  openGraph: {
+    title: "Consulting | Catalyst 7",
+    description:
+      "Business strategy, systems design, market entry and operational audits for founders, SMEs and creative businesses. Catalyst 7 configures the structure behind your growth.",
+    url: "https://catalyst7.co.za/consulting",
+  },
+}
 
 export default function Consulting() {
   return (
