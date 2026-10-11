@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -17,8 +18,18 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-screen flex items-center justify-center bg-[#0A0A0A] px-6 text-center">
-        <div>
+      <section className="relative min-h-screen flex items-center justify-center px-6 text-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/hero-bg.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Dark overlay — keeps text legible while letting the red columns breathe */}
+        <div className="absolute inset-0 bg-[#0A0A0A]/70" />
+        <div className="relative z-10">
           <p className="uppercase tracking-widest text-[#999999] text-xs mb-6 font-[family-name:var(--font-inter)]">
             Catalyst 7 — Pretoria
           </p>
@@ -47,6 +58,7 @@ export default function Home() {
       </section>
 
       {/* Three Verticals */}
+
       <section className="py-24 px-6 max-w-6xl mx-auto">
         <p className="uppercase tracking-widest text-[#999999] text-xs mb-12">
           What We Do
