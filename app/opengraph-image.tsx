@@ -20,7 +20,6 @@ export default async function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Top: logo / wordmark */}
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <div
             style={{
@@ -33,7 +32,6 @@ export default async function Image() {
               color: "#EDE5D0",
               fontWeight: 700,
               fontSize: "22px",
-              letterSpacing: "-1px",
             }}
           >
             C7
@@ -43,15 +41,14 @@ export default async function Image() {
               color: "#EDE5D0",
               fontSize: "22px",
               fontWeight: 600,
-              letterSpacing: "0.05em",
               textTransform: "uppercase",
+              letterSpacing: "0.05em",
             }}
           >
             Catalyst 7
           </span>
         </div>
 
-        {/* Centre: headline */}
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div
             style={{
@@ -59,54 +56,32 @@ export default async function Image() {
               fontSize: "64px",
               fontWeight: 700,
               lineHeight: 1.1,
-              letterSpacing: "-1px",
             }}
           >
-            We build the systems
-            <br />
-            that move{" "}
+            We build the systems that move{" "}
             <span style={{ color: "#CC1414" }}>business</span>.
           </div>
-          <div
-            style={{
-              color: "#999999",
-              fontSize: "24px",
-              fontWeight: 400,
-            }}
-          >
+          <div style={{ color: "#999999", fontSize: "24px" }}>
             Technology. Production. Consulting. — Pretoria, South Africa.
           </div>
         </div>
 
-        {/* Bottom: three verticals */}
         <div style={{ display: "flex", gap: "40px" }}>
-          {["Technology", "Production", "Consulting"].map((v) => (
-            <div
-              key={v}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-              }}
-            >
-              <div
-                style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  background: "#CC1414",
-                }}
-              />
-              <span style={{ color: "#EDE5D0", fontSize: "16px", fontWeight: 500 }}>
-                {v}
-              </span>
-            </div>
-          ))}
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#CC1414" }} />
+            <span style={{ color: "#EDE5D0", fontSize: "16px" }}>Technology</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#CC1414" }} />
+            <span style={{ color: "#EDE5D0", fontSize: "16px" }}>Production</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#CC1414" }} />
+            <span style={{ color: "#EDE5D0", fontSize: "16px" }}>Consulting</span>
+          </div>
         </div>
       </div>
     ),
-    {
-      ...size,
-    }
+    { ...size }
   )
 }
