@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og"
 
-export const runtime = "edge"
 export const alt = "Catalyst 7 — Technology. Production. Consulting."
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
@@ -52,14 +51,17 @@ export default async function Image() {
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div
             style={{
+              display: "flex",
+              flexWrap: "wrap",
               color: "#EDE5D0",
               fontSize: "64px",
               fontWeight: 700,
               lineHeight: 1.1,
             }}
           >
-            We build the systems that move{" "}
-            <span style={{ color: "#CC1414" }}>business</span>.
+            <span>We build the systems that move </span>
+            <span style={{ color: "#CC1414" }}>business</span>
+            <span>.</span>
           </div>
           <div style={{ color: "#999999", fontSize: "24px" }}>
             Technology. Production. Consulting. — Pretoria, South Africa.
