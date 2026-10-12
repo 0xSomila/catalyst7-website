@@ -30,7 +30,7 @@ export async function sendContactForm(
   try {
     await resend.emails.send({
       from: "Catalyst 7 Website <catalyst7@catalyst7.co.za>",
-      to: "catalyst7@catalyst7.co.za",
+      to: ["catalyst7@catalyst7.co.za", "hanzo@catalyst7.co.za"],
       replyTo: email,
       subject: `New enquiry: ${type} — ${name}`,
       html: `
