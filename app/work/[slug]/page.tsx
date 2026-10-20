@@ -31,6 +31,8 @@ type Project = {
 const projects: Project[] = [
   {
     slug: "catalyst7-hq",
+    images: ["/catalyst7-hq-1.png"],
+    imageColumns: 1,
     category: "TECHNOLOGY",
     year: "2026",
     title: "Catalyst 7 HQ",
