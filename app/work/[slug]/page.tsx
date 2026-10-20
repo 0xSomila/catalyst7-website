@@ -23,6 +23,7 @@ type Project = {
   nextTitle: string
   images?: string[]
   imageColumns?: 1 | 2
+  video?: string
   youtubeIds?: string[]
 }
 
@@ -254,6 +255,7 @@ const projects: Project[] = [
   },
   {
     slug: "nuru-house-next5",
+    video: "/nuru-house-next5-video.mp4",
     images: [
       "/nuru-house-next5-1.jpg",
       "/nuru-house-next5-2.jpg",
@@ -470,6 +472,17 @@ export default async function WorkSlugPage({
               <p className="text-[#333333] text-sm">Project imagery coming soon</p>
             </div>
           )
+        )}
+
+        {project.video && (
+          <div className="mt-8">
+            <video
+              src={project.video}
+              controls
+              playsInline
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
         )}
 
         {project.youtubeIds && project.youtubeIds.length > 0 && (
