@@ -55,6 +55,8 @@ const projects: Project[] = [
   },
   {
     slug: "nuru-house-ai-receptionist",
+    images: ["/nuru-house-ai-receptionist-1.png"],
+    imageColumns: 1,
     category: "TECHNOLOGY",
     year: "2026",
     title: "Nuru House AI Receptionist",
