@@ -254,6 +254,13 @@ const projects: Project[] = [
   },
   {
     slug: "nuru-house-next5",
+    images: [
+      "/nuru-house-next5-1.jpg",
+      "/nuru-house-next5-2.jpg",
+      "/nuru-house-next5-3.jpg",
+      "/nuru-house-next5-4.jpg",
+      "/nuru-house-next5-5.jpg",
+    ],
     category: "CONSULTING + PRODUCTION",
     year: "2025",
     title: "Nuru House x Next 5",
