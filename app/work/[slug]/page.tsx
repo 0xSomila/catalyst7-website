@@ -22,6 +22,7 @@ type Project = {
   nextSlug: string
   nextTitle: string
   images?: string[]
+  youtubeIds?: string[]
 }
 
 const projects: Project[] = [
@@ -223,6 +224,7 @@ const projects: Project[] = [
   },
   {
     slug: "circuits-of-culture",
+    youtubeIds: ["50rvlYzGsdg", "hDYtWPDlh1A"],
     category: "PRODUCTION",
     year: "2025-2026",
     title: "Circuits of Culture",
@@ -449,8 +451,26 @@ export default async function WorkSlugPage({
             ))}
           </div>
         ) : (
-          <div className="bg-[#1A1A1A] w-full aspect-video flex items-center justify-center">
-            <p className="text-[#333333] text-sm">Project imagery coming soon</p>
+          !project.youtubeIds && (
+            <div className="bg-[#1A1A1A] w-full aspect-video flex items-center justify-center">
+              <p className="text-[#333333] text-sm">Project imagery coming soon</p>
+            </div>
+          )
+        )}
+
+        {project.youtubeIds && project.youtubeIds.length > 0 && (
+          <div className="flex flex-col gap-8 mt-8">
+            {project.youtubeIds.map((id) => (
+              <div key={id} className="w-full" style={{ aspectRatio: "16/9" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}`}
+                  title={`${project.title} — video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+                />
+              </div>
+            ))}
           </div>
         )}
       </section>
