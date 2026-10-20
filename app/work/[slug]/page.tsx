@@ -405,9 +405,9 @@ export default async function WorkSlugPage({
       </section>
 
       {/* Case Study Body */}
-      <section className="py-24 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-        <div className="md:col-span-1">
-          <div className="border-b border-[#333333] pb-8 mb-8">
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
+          <div className="border-b border-[#333333] pb-8 md:border-b-0 md:pb-0">
             <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-3">
               The Brief
             </p>
@@ -415,7 +415,7 @@ export default async function WorkSlugPage({
               {project.brief}
             </p>
           </div>
-          <div className="border-b border-[#333333] pb-8 mb-8">
+          <div className="border-b border-[#333333] pb-8 md:border-b-0 md:pb-0">
             <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-3">
               The Approach
             </p>
@@ -432,27 +432,27 @@ export default async function WorkSlugPage({
             </p>
           </div>
         </div>
-        <div className="md:col-span-2">
-          {project.images && project.images.length > 0 ? (
-            <div className={`grid gap-3 ${project.images.length === 2 ? "grid-cols-2" : "grid-cols-2"}`}>
-              {project.images.map((src, i) => (
-                <div key={i} className="relative w-full overflow-hidden bg-[#1A1A1A]" style={{ aspectRatio: "3/4" }}>
-                  <Image
-                    src={src}
-                    alt={`${project.title} — image ${i + 1}`}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="bg-[#1A1A1A] w-full aspect-video flex items-center justify-center">
-              <p className="text-[#333333] text-sm">Project imagery coming soon</p>
-            </div>
-          )}
-        </div>
+
+        {project.images && project.images.length > 0 ? (
+          <div className="grid grid-cols-2 gap-4">
+            {project.images.map((src, i) => (
+              <div key={i} className="w-full bg-[#1A1A1A]">
+                <Image
+                  src={src}
+                  alt={`${project.title} — image ${i + 1}`}
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="bg-[#1A1A1A] w-full aspect-video flex items-center justify-center">
+            <p className="text-[#333333] text-sm">Project imagery coming soon</p>
+          </div>
+        )}
       </section>
 
       {/* Next Project */}
