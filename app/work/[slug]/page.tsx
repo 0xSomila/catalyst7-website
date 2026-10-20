@@ -24,6 +24,7 @@ type Project = {
   images?: string[]
   imageColumns?: 1 | 2
   video?: string
+  instagramReel?: string
   youtubeIds?: string[]
 }
 
@@ -204,6 +205,7 @@ const projects: Project[] = [
   },
   {
     slug: "krownbarber-the-krown",
+    instagramReel: "DWRm7Nbik4Z",
     images: [
       "/krownbarber-the-krown-1.jpg",
       "/krownbarber-the-krown-2.jpg",
@@ -482,6 +484,19 @@ export default async function WorkSlugPage({
               playsInline
               style={{ width: "100%", height: "auto", display: "block" }}
             />
+          </div>
+        )}
+
+        {project.instagramReel && (
+          <div className="mt-8 flex justify-center">
+            <div style={{ maxWidth: "400px", width: "100%" }}>
+              <iframe
+                src={`https://www.instagram.com/reel/${project.instagramReel}/embed`}
+                style={{ width: "100%", aspectRatio: "9/16", border: "none", display: "block" }}
+                allowFullScreen
+                scrolling="no"
+              />
+            </div>
           </div>
         )}
 
