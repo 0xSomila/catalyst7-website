@@ -116,10 +116,10 @@ const projects: Project[] = [
   {
     slug: "phoenix-jewellers-maker-series",
     images: [
-      "/work/phoenix-jewellers-maker-series-1.jpg",
-      "/work/phoenix-jewellers-maker-series-2.jpg",
-      "/work/phoenix-jewellers-maker-series-3.jpg",
-      "/work/phoenix-jewellers-maker-series-4.jpg",
+      "/phoenix-jewellers-maker-series-1.jpg",
+      "/phoenix-jewellers-maker-series-2.jpg",
+      "/phoenix-jewellers-maker-series-3.jpg",
+      "/phoenix-jewellers-maker-series-4.jpg",
     ],
     category: "PRODUCTION",
     year: "2026",
@@ -144,10 +144,12 @@ const projects: Project[] = [
   {
     slug: "origin-pretoria",
     images: [
-      "/work/origin-pretoria-1.jpg",
-      "/work/origin-pretoria-2.jpg",
-      "/work/origin-pretoria-3.jpg",
-      "/work/origin-pretoria-4.jpg",
+      "/origin-pretoria-1.jpg",
+      "/origin-pretoria-2.jpg",
+      "/origin-pretoria-3.jpg",
+      "/origin-pretoria-4.jpg",
+      "/origin-pretoria-5.jpg",
+      "/origin-pretoria-6.jpg",
     ],
     category: "PRODUCTION",
     year: "2026",
@@ -194,10 +196,10 @@ const projects: Project[] = [
   {
     slug: "krownbarber-the-krown",
     images: [
-      "/work/krownbarber-the-krown-1.jpg",
-      "/work/krownbarber-the-krown-2.jpg",
-      "/work/krownbarber-the-krown-3.jpg",
-      "/work/krownbarber-the-krown-4.jpg",
+      "/krownbarber-the-krown-1.jpg",
+      "/krownbarber-the-krown-2.jpg",
+      "/krownbarber-the-krown-3.jpg",
+      "/krownbarber-the-krown-4.jpg",
     ],
     category: "PRODUCTION",
     year: "2025",
@@ -266,8 +268,8 @@ const projects: Project[] = [
   {
     slug: "parrots-wonderpark",
     images: [
-      "/work/parrots-wonderpark-1.jpg",
-      "/work/parrots-wonderpark-2.jpg",
+      "/parrots-wonderpark-1.jpg",
+      "/parrots-wonderpark-2.jpg",
     ],
     category: "PRODUCTION",
     year: "2025",
@@ -292,10 +294,10 @@ const projects: Project[] = [
   {
     slug: "md-2025-the-golden-chapter",
     images: [
-      "/work/md-2025-the-golden-chapter-1.jpg",
-      "/work/md-2025-the-golden-chapter-2.jpg",
-      "/work/md-2025-the-golden-chapter-3.jpg",
-      "/work/md-2025-the-golden-chapter-4.jpg",
+      "/md-2025-the-golden-chapter-1.jpg",
+      "/md-2025-the-golden-chapter-2.jpg",
+      "/md-2025-the-golden-chapter-3.jpg",
+      "/md-2025-the-golden-chapter-4.jpg",
     ],
     category: "PRODUCTION",
     year: "2025",
