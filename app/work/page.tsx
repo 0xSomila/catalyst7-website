@@ -114,6 +114,15 @@ export default function Work() {
         "Event and venue coverage for one of Pretoria's leading entertainment destinations. Photography across social and digital channels.",
       tag: "Event · Photography",
     },
+    {
+      slug: "md-2025-the-golden-chapter",
+      category: "PRODUCTION",
+      year: "2025",
+      title: "MD 2025: The Golden Chapter",
+      description:
+        "Community portrait shoot for two students and their families at the Union Buildings, Pretoria. Matric 2025.",
+      tag: "Photography · Editorial",
+    },
   ]
 
   return (

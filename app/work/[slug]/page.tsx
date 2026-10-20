@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -20,6 +21,7 @@ type Project = {
   stat3label: string
   nextSlug: string
   nextTitle: string
+  images?: string[]
 }
 
 const projects: Project[] = [
@@ -113,6 +115,12 @@ const projects: Project[] = [
   },
   {
     slug: "phoenix-jewellers-maker-series",
+    images: [
+      "/work/phoenix-jewellers-maker-series-1.jpg",
+      "/work/phoenix-jewellers-maker-series-2.jpg",
+      "/work/phoenix-jewellers-maker-series-3.jpg",
+      "/work/phoenix-jewellers-maker-series-4.jpg",
+    ],
     category: "PRODUCTION",
     year: "2026",
     title: "Phoenix Jewellers — The Maker Series",
@@ -135,6 +143,12 @@ const projects: Project[] = [
   },
   {
     slug: "origin-pretoria",
+    images: [
+      "/work/origin-pretoria-1.jpg",
+      "/work/origin-pretoria-2.jpg",
+      "/work/origin-pretoria-3.jpg",
+      "/work/origin-pretoria-4.jpg",
+    ],
     category: "PRODUCTION",
     year: "2026",
     title: "ORIGIN — Pretoria",
@@ -179,6 +193,12 @@ const projects: Project[] = [
   },
   {
     slug: "krownbarber-the-krown",
+    images: [
+      "/work/krownbarber-the-krown-1.jpg",
+      "/work/krownbarber-the-krown-2.jpg",
+      "/work/krownbarber-the-krown-3.jpg",
+      "/work/krownbarber-the-krown-4.jpg",
+    ],
     category: "PRODUCTION",
     year: "2025",
     title: "KrownBarber x Lefa — The Krown",
@@ -245,6 +265,10 @@ const projects: Project[] = [
   },
   {
     slug: "parrots-wonderpark",
+    images: [
+      "/work/parrots-wonderpark-1.jpg",
+      "/work/parrots-wonderpark-2.jpg",
+    ],
     category: "PRODUCTION",
     year: "2025",
     title: "Parrots Wonderpark",
@@ -261,6 +285,34 @@ const projects: Project[] = [
     stat2value: "Pretoria",
     stat2label: "LOCATION",
     stat3value: "2025",
+    stat3label: "DELIVERED",
+    nextSlug: "md-2025-the-golden-chapter",
+    nextTitle: "MD 2025: The Golden Chapter",
+  },
+  {
+    slug: "md-2025-the-golden-chapter",
+    images: [
+      "/work/md-2025-the-golden-chapter-1.jpg",
+      "/work/md-2025-the-golden-chapter-2.jpg",
+      "/work/md-2025-the-golden-chapter-3.jpg",
+      "/work/md-2025-the-golden-chapter-4.jpg",
+    ],
+    category: "PRODUCTION",
+    year: "2025",
+    title: "MD 2025: The Golden Chapter",
+    client: "Community",
+    tag: "Photography · Editorial",
+    brief:
+      "Not every shoot is a client brief. Some are just about showing up for people who matter. For MD 2025, Catalyst 7 took two students and their families to the Union Buildings in Pretoria and gave them the full treatment — editorial direction, golden hour timing, and the kind of energy that makes a matric shoot feel like more than just photos.",
+    approach:
+      "Portrait photography across the Union Buildings grounds, capturing the couples and families in a style that balanced cinematic polish with real, warm moments. No overcrowding. No rushed line-ups. Just two students getting the shoot they deserved, with the people who raised them alongside.",
+    outcome:
+      "Images that live on the wall, not just in a camera roll. A reminder that community work is some of the most important work we do.",
+    stat1value: "Union Buildings",
+    stat1label: "LOCATION",
+    stat2value: "Community",
+    stat2label: "CATEGORY",
+    stat3value: "Oct 2025",
     stat3label: "DELIVERED",
     nextSlug: "catalyst7-hq",
     nextTitle: "Catalyst 7 HQ",
@@ -379,11 +431,25 @@ export default async function WorkSlugPage({
           </div>
         </div>
         <div className="md:col-span-2">
-          <div className="bg-[#1A1A1A] w-full aspect-video flex items-center justify-center">
-            <p className="text-[#333333] text-sm">
-              Project imagery coming soon
-            </p>
-          </div>
+          {project.images && project.images.length > 0 ? (
+            <div className={`grid gap-3 ${project.images.length === 2 ? "grid-cols-2" : "grid-cols-2"}`}>
+              {project.images.map((src, i) => (
+                <div key={i} className="relative w-full overflow-hidden bg-[#1A1A1A]" style={{ aspectRatio: "3/4" }}>
+                  <Image
+                    src={src}
+                    alt={`${project.title} — image ${i + 1}`}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-[#1A1A1A] w-full aspect-video flex items-center justify-center">
+              <p className="text-[#333333] text-sm">Project imagery coming soon</p>
+            </div>
+          )}
         </div>
       </section>
 
