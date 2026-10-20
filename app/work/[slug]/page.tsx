@@ -79,6 +79,8 @@ const projects: Project[] = [
   },
   {
     slug: "c7-automation-os",
+    images: ["/c7-automation-os-1.png"],
+    imageColumns: 1,
     category: "TECHNOLOGY",
     year: "2026",
     title: "C7 Automation OS",
