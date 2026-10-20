@@ -22,6 +22,7 @@ type Project = {
   nextSlug: string
   nextTitle: string
   images?: string[]
+  imageColumns?: 1 | 2
   youtubeIds?: string[]
 }
 
@@ -94,6 +95,12 @@ const projects: Project[] = [
   },
   {
     slug: "bolo-league-visual-identity",
+    images: [
+      "/bolo-league-visual-identity-1.jpg.png",
+      "/bolo-league-visual-identity-2.jpg.png",
+      "/bolo-league-visual-identity-3.jpg.png",
+    ],
+    imageColumns: 1,
     category: "PRODUCTION",
     year: "2026",
     title: "BOLO League — Visual Identity",
@@ -436,7 +443,7 @@ export default async function WorkSlugPage({
         </div>
 
         {project.images && project.images.length > 0 ? (
-          <div className="grid grid-cols-2 gap-4">
+          <div className={`grid gap-4 ${project.imageColumns === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
             {project.images.map((src, i) => (
               <div key={i} className="w-full bg-[#1A1A1A]">
                 <Image
