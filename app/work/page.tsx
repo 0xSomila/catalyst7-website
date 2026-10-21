@@ -128,32 +128,32 @@ export default function Work() {
   return (
     <>
       {/* Page Hero */}
-      <section className="py-32 px-6 max-w-6xl mx-auto">
-        <p className="text-[#999999] text-xs uppercase tracking-widest mb-8">
+      <section className="py-16 md:py-32 px-6 max-w-6xl mx-auto">
+        <p className="text-[#999999] text-xs uppercase tracking-widest mb-6 md:mb-8">
           <Link href="/" className="hover:text-[#EDE5D0] transition-colors">
             HOME
           </Link>{" "}
           / WORK
         </p>
-        <h1 className="text-[#EDE5D0] text-5xl md:text-7xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
+        <h1 className="text-[#EDE5D0] text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 font-[family-name:var(--font-space-grotesk)]">
           Selected work.
         </h1>
-        <p className="text-[#999999] text-xl max-w-xl">
+        <p className="text-[#999999] text-base md:text-xl max-w-xl">
           Projects across technology, production and consulting. Every
           engagement listed here produced a measurable outcome.
         </p>
       </section>
 
       {/* Project Grid */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className="py-12 md:py-24 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project, index) => (
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-              className="bg-[#1A1A1A] p-8 block hover:border-[#CC1414] border border-transparent transition-colors group"
+              className="bg-[#1A1A1A] p-5 md:p-8 block hover:border-[#CC1414] border border-transparent transition-colors group"
             >
-              <div className="flex justify-between mb-6">
+              <div className="flex justify-between mb-4 md:mb-6">
                 <span
                   className={`text-xs uppercase tracking-widest ${
                     index === 0 ? "text-[#CC1414]" : "text-[#999999]"
@@ -163,10 +163,10 @@ export default function Work() {
                 </span>
                 <span className="text-[#999999] text-xs">{project.year}</span>
               </div>
-              <h3 className="text-[#EDE5D0] text-xl font-semibold mb-3 group-hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)]">
+              <h3 className="text-[#EDE5D0] text-base md:text-xl font-semibold mb-2 md:mb-3 group-hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)]">
                 {project.title}
               </h3>
-              <p className="text-[#999999] text-sm leading-relaxed mb-6">
+              <p className="text-[#999999] text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
                 {project.description}
               </p>
               <span className="inline-block border border-[#333333] text-[#999999] text-xs px-3 py-1">
@@ -178,9 +178,9 @@ export default function Work() {
       </section>
 
       {/* CTA Strip */}
-      <section className="bg-[#1A1A1A] py-16 px-6 border-t border-[#333333]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[#EDE5D0] text-xl font-semibold font-[family-name:var(--font-space-grotesk)]">
+      <section className="bg-[#1A1A1A] py-10 md:py-16 px-6 border-t border-[#333333]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+          <p className="text-[#EDE5D0] text-base md:text-xl font-semibold font-[family-name:var(--font-space-grotesk)]">
             Working on something?
           </p>
           <Link

@@ -382,17 +382,17 @@ export default async function WorkSlugPage({
   return (
     <>
       {/* Page Hero */}
-      <section className="py-32 px-6 max-w-6xl mx-auto">
-        <p className="text-[#999999] text-xs uppercase tracking-widest mb-8">
+      <section className="py-16 md:py-32 px-6 max-w-6xl mx-auto">
+        <p className="text-[#999999] text-xs uppercase tracking-widest mb-6 md:mb-8">
           <Link href="/work" className="hover:text-[#EDE5D0] transition-colors">
             WORK
           </Link>{" "}
           / {project.category}
         </p>
-        <h1 className="text-[#EDE5D0] text-5xl md:text-7xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
+        <h1 className="text-[#EDE5D0] text-4xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-4 font-[family-name:var(--font-space-grotesk)]">
           {project.title}
         </h1>
-        <p className="text-[#999999] text-lg mb-2">
+        <p className="text-[#999999] text-sm md:text-lg mb-2">
           Client: {project.client}
         </p>
         <span className="border border-[#333333] text-[#999999] text-xs px-3 py-1 inline-block">
@@ -401,29 +401,29 @@ export default async function WorkSlugPage({
       </section>
 
       {/* Three Stat Tiles */}
-      <section className="bg-[#1A1A1A] py-12 px-6 border-y border-[#333333]">
-        <div className="max-w-6xl mx-auto grid grid-cols-3 gap-6 text-center">
+      <section className="bg-[#1A1A1A] py-8 md:py-12 px-6 border-y border-[#333333]">
+        <div className="max-w-6xl mx-auto grid grid-cols-3 gap-3 md:gap-6 text-center">
           <div>
-            <p className="text-[#EDE5D0] text-3xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)]">
+            <p className="text-[#EDE5D0] text-lg md:text-3xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)] break-words">
               {project.stat1value}
             </p>
-            <p className="text-[#CC1414] text-xs uppercase tracking-widest">
+            <p className="text-[#CC1414] text-[9px] md:text-xs uppercase tracking-wider md:tracking-widest">
               {project.stat1label}
             </p>
           </div>
           <div>
-            <p className="text-[#EDE5D0] text-3xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)]">
+            <p className="text-[#EDE5D0] text-lg md:text-3xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)] break-words">
               {project.stat2value}
             </p>
-            <p className="text-[#CC1414] text-xs uppercase tracking-widest">
+            <p className="text-[#CC1414] text-[9px] md:text-xs uppercase tracking-wider md:tracking-widest">
               {project.stat2label}
             </p>
           </div>
           <div>
-            <p className="text-[#EDE5D0] text-3xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)]">
+            <p className="text-[#EDE5D0] text-lg md:text-3xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)] break-words">
               {project.stat3value}
             </p>
-            <p className="text-[#CC1414] text-xs uppercase tracking-widest">
+            <p className="text-[#CC1414] text-[9px] md:text-xs uppercase tracking-wider md:tracking-widest">
               {project.stat3label}
             </p>
           </div>
@@ -431,8 +431,8 @@ export default async function WorkSlugPage({
       </section>
 
       {/* Case Study Body */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
+      <section className="py-12 md:py-24 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-12 md:mb-24">
           <div className="border-b border-[#333333] pb-8 md:border-b-0 md:pb-0">
             <p className="text-[#CC1414] text-xs uppercase tracking-widest mb-3">
               The Brief
@@ -524,14 +524,14 @@ export default async function WorkSlugPage({
       </section>
 
       {/* Next Project */}
-      <section className="py-16 px-6 max-w-6xl mx-auto border-t border-[#333333]">
-        <div className="flex justify-between items-center">
-          <p className="text-[#999999] text-xs uppercase tracking-widest">
+      <section className="py-10 md:py-16 px-6 max-w-6xl mx-auto border-t border-[#333333]">
+        <div className="flex justify-between items-center gap-4">
+          <p className="text-[#999999] text-xs uppercase tracking-widest shrink-0">
             Next Project
           </p>
           <Link
             href={`/work/${project.nextSlug}`}
-            className="text-[#EDE5D0] text-xl font-semibold hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)]"
+            className="text-[#EDE5D0] text-base md:text-xl font-semibold hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)] text-right"
           >
             {project.nextTitle} &rarr;
           </Link>
