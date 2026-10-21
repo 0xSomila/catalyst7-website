@@ -24,6 +24,8 @@ type Project = {
   images?: string[]
   imageColumns?: 1 | 2
   video?: string
+  videos?: string[]
+  videoPortrait?: boolean
   instagramReel?: string
   youtubeIds?: string[]
 }
@@ -137,6 +139,10 @@ const projects: Project[] = [
       "/phoenix-jewellers-maker-series-3.jpg",
       "/phoenix-jewellers-maker-series-4.jpg",
     ],
+    videos: [
+      "/phoenix-jewellers-maker-series-video-1.mp4",
+      "/phoenix-jewellers-maker-series-video-2.mp4",
+    ],
     category: "PRODUCTION",
     year: "2026",
     title: "Phoenix Jewellers — The Maker Series",
@@ -189,6 +195,19 @@ const projects: Project[] = [
   },
   {
     slug: "maneuneu-physiotherapy",
+    images: [
+      "/maneuneu-physiotherapy-1.jpeg",
+      "/maneuneu-physiotherapy-2.jpeg",
+      "/maneuneu-physiotherapy-3.jpeg",
+      "/maneuneu-physiotherapy-4.jpeg",
+      "/maneuneu-physiotherapy-5.jpeg",
+    ],
+    imageColumns: 2,
+    videos: [
+      "/maneuneu-physiotherapy-video-1.mp4",
+      "/maneuneu-physiotherapy-video-2.mp4",
+    ],
+    videoPortrait: true,
     category: "CONSULTING + PRODUCTION",
     year: "2025-2026",
     title: "Maneuneu Physiotherapy — Brand Content System",
@@ -211,7 +230,7 @@ const projects: Project[] = [
   },
   {
     slug: "krownbarber-the-krown",
-    instagramReel: "DWRm7Nbik4Z",
+    video: "/krownbarber-the-krown-video-1.mp4",
     images: [
       "/krownbarber-the-krown-1.jpg",
       "/krownbarber-the-krown-2.jpg",
@@ -490,6 +509,24 @@ export default async function WorkSlugPage({
               playsInline
               style={{ width: "100%", height: "auto", display: "block" }}
             />
+          </div>
+        )}
+
+        {project.videos && project.videos.length > 0 && (
+          <div className={`mt-8 flex flex-col gap-6 ${project.videoPortrait ? "items-center" : ""}`}>
+            {project.videos.map((src, i) => (
+              <div
+                key={i}
+                style={project.videoPortrait ? { maxWidth: "360px", width: "100%" } : { width: "100%" }}
+              >
+                <video
+                  src={src}
+                  controls
+                  playsInline
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              </div>
+            ))}
           </div>
         )}
 
