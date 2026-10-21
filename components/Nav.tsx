@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 
 const links = [
@@ -14,12 +14,18 @@ const links = [
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : ""
+    return () => { document.body.style.overflow = "" }
+  }, [isOpen])
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#333333]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
             <img src="/logo.svg" alt="Catalyst 7" className="h-8 w-auto" />
           </Link>
 
@@ -44,41 +50,73 @@ export default function Nav() {
             Get In Touch
           </Link>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger / X */}
           <button
-            className="md:hidden flex flex-col gap-1.5"
+            className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5 relative"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            <div className="h-0.5 w-5 bg-[#EDE5D0]" />
-            <div className="h-0.5 w-5 bg-[#EDE5D0]" />
-            <div className="h-0.5 w-5 bg-[#EDE5D0]" />
+            <span
+              className={`block h-0.5 w-5 bg-[#EDE5D0] transition-all duration-300 origin-center ${
+                isOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-[#EDE5D0] transition-all duration-300 ${
+                isOpen ? "opacity-0 scale-x-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-[#EDE5D0] transition-all duration-300 origin-center ${
+                isOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-[#0A0A0A] z-40 flex flex-col pt-20 px-6">
-          {links.map(({ href, label }) => (
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-[#0A0A0A] flex flex-col transition-all duration-300 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Top spacer to clear nav bar */}
+        <div className="h-16 shrink-0" />
+
+        {/* Nav links */}
+        <div className="flex-1 flex flex-col justify-center px-6 pb-8">
+          {links.map(({ href, label }, i) => (
             <Link
               key={href}
               href={href}
               onClick={() => setIsOpen(false)}
-              className="text-[#EDE5D0] text-2xl font-bold py-4 border-b border-[#333333] font-[family-name:var(--font-space-grotesk)]"
+              className={`text-[#EDE5D0] text-3xl sm:text-4xl font-bold py-4 border-b border-[#1E1E1E] font-[family-name:var(--font-space-grotesk)] hover:text-[#CC1414] transition-all duration-200 ${
+                isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              }`}
+              style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
             >
               {label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="text-[#EDE5D0] text-2xl font-bold py-4 border-b border-[#333333] font-[family-name:var(--font-space-grotesk)]"
+
+          {/* CTA Button */}
+          <div
+            className={`mt-8 transition-all duration-200 ${
+              isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+            style={{ transitionDelay: isOpen ? `${links.length * 50}ms` : "0ms" }}
           >
-            Contact
-          </Link>
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block bg-[#CC1414] text-white text-center text-base font-semibold px-8 py-4 hover:bg-red-700 transition-colors font-[family-name:var(--font-space-grotesk)]"
+            >
+              Get In Touch
+            </Link>
+          </div>
         </div>
-      )}
+      </div>
 
       {/* Spacer */}
       <div className="h-16" />
