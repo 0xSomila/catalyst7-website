@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const links = [
   { href: "/work", label: "Work" },
@@ -13,6 +14,10 @@ const links = [
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Active check — matches exact page or any child route (e.g. /work/some-slug)
+  const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/")
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -24,10 +29,10 @@ export default function Nav() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#333333]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
+          {/* Logo — hard navigate to home so it always reloads */}
+          <a href="/" onClick={() => setIsOpen(false)} className="flex items-center">
             <img src="/logo.svg" alt="Catalyst 7" className="h-8 w-auto" />
-          </Link>
+          </a>
 
           {/* Desktop Links */}
           <div className="hidden md:flex gap-8">
@@ -35,7 +40,11 @@ export default function Nav() {
               <Link
                 key={href}
                 href={href}
-                className="text-[#999999] text-sm hover:text-[#EDE5D0] transition-colors"
+                className={`text-sm transition-colors ${
+                  isActive(href)
+                    ? "text-[#CC1414]"
+                    : "text-[#999999] hover:text-[#EDE5D0]"
+                }`}
               >
                 {label}
               </Link>
@@ -45,7 +54,11 @@ export default function Nav() {
           {/* Desktop CTA */}
           <Link
             href="/contact"
-            className="hidden md:flex bg-[#CC1414] text-white text-sm px-5 py-2 font-medium hover:bg-red-700 transition-colors"
+            className={`hidden md:flex text-sm px-5 py-2 font-medium transition-colors ${
+              pathname === "/contact"
+                ? "bg-red-700 text-white"
+                : "bg-[#CC1414] text-white hover:bg-red-700"
+            }`}
           >
             Get In Touch
           </Link>
@@ -91,7 +104,9 @@ export default function Nav() {
               key={href}
               href={href}
               onClick={() => setIsOpen(false)}
-              className={`text-[#EDE5D0] text-3xl sm:text-4xl font-bold py-4 border-b border-[#1E1E1E] font-[family-name:var(--font-space-grotesk)] hover:text-[#CC1414] transition-all duration-200 ${
+              className={`text-3xl sm:text-4xl font-bold py-4 border-b border-[#1E1E1E] font-[family-name:var(--font-space-grotesk)] transition-all duration-200 ${
+                isActive(href) ? "text-[#CC1414]" : "text-[#EDE5D0] hover:text-[#CC1414]"
+              } ${
                 isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
               style={{ transitionDelay: isOpen ? `${i * 50}ms` : "0ms" }}
