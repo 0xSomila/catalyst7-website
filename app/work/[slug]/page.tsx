@@ -395,8 +395,10 @@ export default async function WorkSlugPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const project = projects.find((p) => p.slug === slug)
+  const currentIndex = projects.findIndex((p) => p.slug === slug)
+  const project = currentIndex !== -1 ? projects[currentIndex] : undefined
   if (!project) notFound()
+  const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length]
 
   return (
     <>
@@ -560,18 +562,31 @@ export default async function WorkSlugPage({
         )}
       </section>
 
-      {/* Next Project */}
+      {/* Project Navigation */}
       <section className="py-10 md:py-16 px-6 max-w-6xl mx-auto border-t border-[#333333]">
         <div className="flex justify-between items-center gap-4">
-          <p className="text-[#999999] text-xs uppercase tracking-widest shrink-0">
-            Next Project
-          </p>
-          <Link
-            href={`/work/${project.nextSlug}`}
-            className="text-[#EDE5D0] text-base md:text-xl font-semibold hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)] text-right"
-          >
-            {project.nextTitle} &rarr;
-          </Link>
+          <div className="min-w-0">
+            <p className="text-[#999999] text-xs uppercase tracking-widest mb-2">
+              Previous
+            </p>
+            <Link
+              href={`/work/${prevProject.slug}`}
+              className="text-[#EDE5D0] text-sm md:text-xl font-semibold hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)]"
+            >
+              &larr; {prevProject.title}
+            </Link>
+          </div>
+          <div className="min-w-0 text-right">
+            <p className="text-[#999999] text-xs uppercase tracking-widest mb-2">
+              Next
+            </p>
+            <Link
+              href={`/work/${project.nextSlug}`}
+              className="text-[#EDE5D0] text-sm md:text-xl font-semibold hover:text-[#CC1414] transition-colors font-[family-name:var(--font-space-grotesk)]"
+            >
+              {project.nextTitle} &rarr;
+            </Link>
+          </div>
         </div>
       </section>
     </>
